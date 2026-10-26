@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Notes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <h1>📝 My Personal Notes</h1>
+        </div>
+        <div class="navbar-right">
+            <!-- Tombol notifikasi -->
+            <button class="btn-icon" id="btn-notif" title="Notifikasi">
+                🔔
+                <span class="notif-badge" id="notif-badge" style="display: none;">0</span>
+            </button>
+            <!-- Info user & logout -->
+            <span id="user-name" class="user-name"></span>
+            <button class="btn btn-logout" id="btn-logout">Keluar</button>
+        </div>
+    </header>
+
+    <!-- Konten utama -->
+    <main class="main-content">
+        <!-- Tab: Catatan Saya / Dibagikan ke Saya -->
+        <div class="tabs">
+            <button class="tab active" id="tab-my-notes" data-tab="my-notes">Catatan Saya</button>
+            <button class="tab" id="tab-shared-notes" data-tab="shared-notes">Dibagikan ke Saya</button>
+        </div>
+
+        <!-- Toolbar: tombol tambah catatan -->
+        <div class="toolbar" id="toolbar-my-notes">
+            <button class="btn btn-primary" id="btn-add-note">+ Catatan Baru</button>
+        </div>
+
+        <!-- Daftar catatan -->
+        <div class="notes-list" id="notes-list">
+            <!-- Catatan akan dimuat lewat JavaScript -->
+            <p class="empty-state" id="empty-state">Belum ada catatan. Klik "+ Catatan Baru" untuk mulai.</p>
+        </div>
+    </main>
+
+    <!-- Sidebar (slide dari kanan) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2 id="sidebar-title">Catatan Baru</h2>
+            <button class="btn-icon" id="btn-close-sidebar">✕</button>
+        </div>
+        <div class="sidebar-body">
+            <form id="note-form">
+                <input type="hidden" id="note-id" value="">
+
+                <div class="form-group">
+                    <label for="note-title">Judul</label>
+                    <input type="text" id="note-title" placeholder="Judul catatan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="note-content">Isi Catatan</label>
+                    <textarea id="note-content" rows="8" placeholder="Tulis catatan di sini..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="note-deadline">Tenggat Waktu (opsional)</label>
+                    <input type="datetime-local" id="note-deadline">
+                </div>
+
+                <!-- Bagian berbagi catatan (hanya muncul saat edit, pemilik saja) -->
+                <div class="form-group" id="share-section" style="display: none;">
+                    <label>Bagikan ke Pengguna Lain</label>
+                    <div class="share-input-row">
+                        <input type="email" id="share-email" placeholder="Email pengguna">
+                        <button type="button" class="btn btn-small" id="btn-share">Tambah</button>
+                    </div>
+                    <ul class="shared-users-list" id="shared-users-list">
+                        <!-- Daftar user yang dibagikan -->
+                    </ul>
+                </div>
+
+                <!-- Tombol aksi -->
+                <div class="sidebar-actions" id="sidebar-actions-owner">
+                    <button type="submit" class="btn btn-primary" id="btn-save-note">Simpan</button>
+                    <button type="button" class="btn btn-danger" id="btn-delete-note" style="display: none;">Hapus</button>
+                </div>
+            </form>
+
+            <!-- Tampilan read-only untuk catatan yang dibagikan -->
+            <div id="readonly-view" style="display: none;">
+                <div class="form-group">
+                    <label>Judul</label>
+                    <p id="readonly-title" class="readonly-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>Isi Catatan</label>
+                    <p id="readonly-content" class="readonly-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>Tenggat Waktu</label>
+                    <p id="readonly-deadline" class="readonly-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>Pemilik</label>
+                    <p id="readonly-owner" class="readonly-text"></p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Panel notifikasi (dropdown) -->
+    <div class="notif-panel" id="notif-panel" style="display: none;">
+        <div class="notif-header">
+            <h3>Notifikasi</h3>
+            <button class="btn btn-small" id="btn-read-all">Tandai semua dibaca</button>
+        </div>
+        <div class="notif-list" id="notif-list">
+            <p class="empty-state">Belum ada notifikasi.</p>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/notes.js"></script>
+    <script src="/js/share.js"></script>
+    <script src="/js/notification.js"></script>
+</body>
+</html>
+

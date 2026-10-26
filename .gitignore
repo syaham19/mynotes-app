@@ -1,0 +1,19 @@
+# File environment (berisi kredensial)
+.env
+
+# Binary hasil build
+go_vibe
+
+# File OS
+.DS_Store
+Thumbs.db
+
+# File IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependency cache
+vendor/
+

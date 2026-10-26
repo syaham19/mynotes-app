@@ -7,25 +7,25 @@
 ## 1. Informasi Aplikasi
 
 **Nama aplikasi:**  
-`[Isi nama aplikasi]`
+`My Personal Notes`
 
 **Deskripsi aplikasi:**  
-`[Jelaskan tujuan aplikasi dalam 1–3 kalimat]`
+`aplikasi ini agar bisa mencatat setiap ide ataupun kegiatan maupun pengeluaran agar tidak lupa, pengguna juga boleh menambahkan seseorang ke dalam catatannya agar bisa diingat dan dilihat bersama`
 
 **Target pengguna:**  
-`[Siapa yang akan menggunakan aplikasi?]`
+`saya sendiri serta orang orang yang butuh catatan dari hp saja misal pekerja kantoran, ibu rumah tangga, suami-istri. orang tua dan anak `
 
 **Masalah yang ingin diselesaikan:**  
-`[Jelaskan masalah yang ingin diselesaikan oleh aplikasi]`
+`Membantu sebagai pengingat maupun dokumentasi hal hal yang sering terlupa dan perlu dicatat`
 
 ## 2. Kebutuhan Aplikasi
 
 Fitur utama aplikasi:
 
-1. `[Fitur utama 1]`
-2. `[Fitur utama 2]`
-3. `[Fitur utama 3]`
-4. `[Fitur tambahan, jika ada]`
+1. `auth login`
+2. `auth register`
+3. `fitur utama - notes`
+4. `pengingat atau notifikasi`
 
 **Halaman aplikasi:**
 
@@ -42,24 +42,24 @@ Pilih satu opsi untuk setiap komponen yang diperlukan. Sesuaikan dengan kebutuha
 ### A. Backend Framework
 
 - [ ] 1. Go Standard Library (`net/http`)
-- [ ] 2. Gin
+- [x] 2. Gin
 - [ ] 3. Lainnya sebutkan
 
-**Pilihan saya:** `[Isi nomor pilihan]`
+**Pilihan saya:** `2`
 
 ### B. ORM (Object-Relational Mapping)
 
 - [ ] 1. Tidak menggunakan ORM (SQL manual)
-- [ ] 2. GORM
+- [x] 2. GORM
 - [ ] 3. Lainnya sebutkan
 
-**Pilihan saya:** `[Isi nomor pilihan]`
+**Pilihan saya:** `2`
 
 **Ketentuan:** `[Isi ketentuannya contoh memakai GORM atau menggunakan  SQL manual dengan library pgx]`
 
 ### C. Database
 
-- [ ] 1. PostgreSQL
+- [x] 1. PostgreSQL
 - [ ] 2. MySQL
 - [ ] 3. SQLite
 
