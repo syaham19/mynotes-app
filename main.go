@@ -10,6 +10,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"go_vibe/config"
 	"go_vibe/models"
@@ -58,9 +59,13 @@ func main() {
 	routes.SetupRoutes(router)
 
 	// 8. Jalankan server
-	log.Printf("Server berjalan di http://localhost:%s", cfg.Port)
-	if err := router.Run(":" + cfg.Port); err != nil {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = cfg.Port
+	}
+
+	log.Printf("Server berjalan di port %s", port)
+	if err := router.Run(":" + port); err != nil {
 		log.Fatal(fmt.Sprintf("Error: Gagal menjalankan server: %v", err))
 	}
 }
-
